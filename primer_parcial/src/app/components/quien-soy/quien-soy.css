@@ -1,0 +1,10 @@
+h3 {
+  margin-top: 1.5rem; /* mt-4 */
+  color: #12613c; /* text-success-emphasis (valor para Bootstrap 5) */
+  font-weight: bold; /* fw-bold */
+}
+
+.juego_texto {
+  font-size: 1.25rem; /* Equivalente a fs-5 */
+  color: var(--bs-success-emphasis); /* Equivalente a text-success-emphasis */
+}

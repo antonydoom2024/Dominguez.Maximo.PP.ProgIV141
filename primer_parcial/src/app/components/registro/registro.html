@@ -1,0 +1,101 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container-fluid">
+
+    <a routerLink="/login" class="navbar-brand fw-bold"> <span class="text-white fs-2"> 
+      <i class="bi bi-controller"></i></span> 
+      <span class="text-light fs-3"> Sala </span> 
+      <span class="text-warning fs-3">de Juegos</span> </a>
+
+    <button class="navbar-toggler" type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarS" 
+        aria-controls="navbarS" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation"
+    > 
+        <span class="navbar-toggler-icon"></span> 
+    </button>
+    <div class="collapse navbar-collapse" id="navbarS">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="/login" class="nav-link"><span class="text-white">Iniciar Sesion</span></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/registro" class="nav-link"><span class="text-white">Registrarse</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="d-flex justify-content-center align-items-center">
+
+<div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem;">
+
+    <div class="d-flex justify-content-center">
+        <img src="images/people.png" alt="register-icon" style="height: 8rem;">
+    </div>
+
+    <div class="text-center fs-1 fw-bold mt-2">Registrarse</div>
+
+    <form (ngSubmit)="onSubmit()" #registroForm="ngForm">
+
+        <div class="input-group mt-4">
+            <div class="input-group-text bg-info">
+                <i class="bi bi-envelope-fill" alt="email-icon" style="font-size: 25px; color: #fffc48;"></i>
+            </div>
+            <input class="form-control bg-light" type="email" [(ngModel)] = "email" name="email" placeholder="Correo electrónico" required email #emailField = "ngModel">
+        </div>
+        @if (emailField.invalid && emailField.touched){
+            <div class="text-danger small mt-1"> Correo electrónico inválido</div>
+        }
+
+        <div class="input-group mt-2">
+            <div class="input-group-text bg-info">
+                <i class="bi bi bi-person-fill" alt="nombre-icon" style="font-size: 25px; color: #fffc48;"></i>
+            </div>
+            <input class="form-control bg-light" type="text" [(ngModel)] = "name" name="nombre" placeholder="Nombre" required nombre #nombreField = "ngModel">
+        </div>
+        @if (nombreField.invalid && nombreField.touched){
+            <div class="text-danger small mt-1"> Nombre inválido</div>
+        }
+
+        <div class="input-group mt-2">
+            <div class="input-group-text bg-info">
+                <i class="bi bi bi-person-fill" alt="apellido-icon" style="font-size: 25px; color: #fffc48;"></i>
+            </div>
+            <input class="form-control bg-light" type="text" [(ngModel)] = "surname" name="apellido" placeholder="Apellido" required apellido #apellidoField = "ngModel">
+        </div>
+        @if (apellidoField.invalid && apellidoField.touched){
+            <div class="text-danger small mt-1"> Apellido inválido</div>
+        }
+
+        <div class="input-group mt-2">
+            <div class="input-group-text bg-info">
+                <i class="bi bi bi-person-fill" alt="edad-icon" style="font-size: 25px; color: #fffc48;"></i>
+            </div>
+            <input class="form-control bg-light" type="number" [(ngModel)] = "age" name="edad" placeholder="Edad" required edad #edadField = "ngModel">
+        </div>
+        @if (edadField.invalid && edadField.touched){
+            <div class="text-danger small mt-1"> Edad inválida</div>
+        }
+
+        <div class="input-group mt-2">
+            <div class="input-group-text bg-info">
+                <i class="bi bi-lock-fill" alt="password-icon" style="font-size: 25px; color: #fffc48;"></i>
+            </div>
+            <input class="form-control bg-light" type="password" [(ngModel)] = "password" name="password" placeholder="Contraseña" required password #passwordField = "ngModel">
+        </div>
+        @if (passwordField.invalid && passwordField.touched){
+            <div class="text-danger small mt-1"> Contraseña inválida</div>
+        }
+
+        <div> <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" type="submit" [disabled]="registroForm.invalid">Registrarse</button> </div>
+    </form>
+
+    <div class="d-flex gap-1 justify-content-center mt-1">
+        <div>Ya tienes una cuenta?</div>
+        <a routerLink="/login" class="text-decoration-none text-info fw-semibold">Ingresar</a>
+    </div>
+</div>
+</div>

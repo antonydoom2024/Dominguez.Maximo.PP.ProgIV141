@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container-fluid">
+
+    <a routerLink="/login" class="navbar-brand fw-bold"> <span class="text-white fs-2"> 
+      <i class="bi bi-controller"></i></span> 
+      <span class="text-light fs-3"> Sala </span> 
+      <span class="text-warning fs-3">de Juegos</span> </a>
+
+    <button class="navbar-toggler" type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarS" 
+        aria-controls="navbarS" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation"
+    > 
+        <span class="navbar-toggler-icon"></span> 
+    </button>
+    <div class="collapse navbar-collapse" id="navbarS">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="/login" class="nav-link"><span class="text-white">Iniciar Sesion</span></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/registro" class="nav-link"><span class="text-white">Registrarse</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="d-flex justify-content-center align-items-center mt-3">
+
+<div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem;">
+
+    <div class="d-flex justify-content-center">
+        <img src="images/user.png" alt="login-icon" style="height: 8rem;">
+    </div>
+
+    <div class="text-center fs-1 fw-bold mt-2">Iniciar sesión</div>
+
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+    <div class="input-group mt-4">
+        <div class="input-group-text bg-info">
+            <i class="bi bi-envelope-fill" alt="email-icon" style="font-size: 25px; color: #fffc48;"></i>
+        </div>
+        <input class="form-control bg-light" type="email" [(ngModel)] = "email" name="email" placeholder="Correo electrónico" required email #emailField = "ngModel">
+    </div>
+    @if (emailField.invalid && emailField.touched){
+        <div class="text-danger small mt-1"> Correo electrónico inválido</div>
+    }
+
+    <div class="input-group mt-2">
+        <div class="input-group-text bg-info">
+            <i class="bi bi-lock-fill" alt="password-icon" style="font-size: 25px; color: #fffc48;"></i>
+        </div>
+        <input class="form-control bg-light" type="password" [(ngModel)] = "password" name="password" placeholder="Contraseña" required password #passwordField = "ngModel">
+    </div>
+    @if (passwordField.invalid && passwordField.touched){
+        <div class="text-danger small mt-1"> Contraseña inválida</div>
+    }
+
+    <div> <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" type="submit" [disabled]="loginForm.invalid">Ingresar</button> </div>
+    </form>
+
+    <div class="d-flex gap-1 justify-content-center mt-1">
+        <div>No tienes una cuenta?</div>
+        <a routerLink="/registro" class="text-decoration-none text-info fw-semibold">Registrarse</a>
+    </div>
+</div>
+</div>

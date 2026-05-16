@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 20px;
+  padding-top: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #fce7e7;
+}
