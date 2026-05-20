@@ -1,11 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { AlumnoService } from '../../service/alumno';
-import { RouterLink } from '@angular/router';
-
 
 @Component({
   selector: 'app-quien-soy',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './quien-soy.html',
   styleUrl: './quien-soy.css',
 })

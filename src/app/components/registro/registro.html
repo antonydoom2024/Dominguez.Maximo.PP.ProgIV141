@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
   <div class="container-fluid">
-
-    <a routerLink="/login" class="navbar-brand fw-bold"> <span class="text-white fs-2"> 
-      <i class="bi bi-controller"></i></span> 
-      <span class="text-light fs-3"> Sala </span> 
-      <span class="text-warning fs-3">de Juegos</span> </a>
+    <img src="favicon.png" alt="favicon" style="width: 40px; height: 40px;">
+    <a routerLink="/login" class="navbar-brand fw-bold">
+        <span class="text-light fs-1">Sala </span> 
+        <span class="text-warning fs-1">de Juegos </span> 
+    </a>
 
     <button class="navbar-toggler" type="button" 
         data-bs-toggle="collapse" 
@@ -28,7 +28,7 @@
   </div>
 </nav>
 
-<div class="d-flex justify-content-center align-items-center">
+<div class="d-flex justify-content-center align-items-center mt-3">
 
 <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem;">
 
@@ -38,7 +38,7 @@
 
     <div class="text-center fs-1 fw-bold mt-2">Registrarse</div>
 
-    <form (ngSubmit)="onSubmit()" #registroForm="ngForm">
+    <form (ngSubmit)="onSubmit()">
 
         <div class="input-group mt-4">
             <div class="input-group-text bg-info">
@@ -90,12 +90,18 @@
             <div class="text-danger small mt-1"> Contraseña inválida</div>
         }
 
-        <div> <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" type="submit" [disabled]="registroForm.invalid">Registrarse</button> </div>
+        <div> <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" type="submit" [disabled]="loading()">@if (loading()){ Cargando ...} @else { Registrarse }</button> </div>
     </form>
 
     <div class="d-flex gap-1 justify-content-center mt-1">
         <div>Ya tienes una cuenta?</div>
         <a routerLink="/login" class="text-decoration-none text-info fw-semibold">Ingresar</a>
     </div>
+    <br>
+
+    @if(mensaje()){
+        <p class="alert fs-5 text-center text-success">{{ mensaje() }}</p>
+    }
+
 </div>
 </div>
