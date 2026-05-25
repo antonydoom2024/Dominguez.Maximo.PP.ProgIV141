@@ -38,7 +38,7 @@
 
     <div class="text-center fs-1 fw-bold mt-2">Iniciar sesión</div>
 
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
 
     <div class="input-group mt-4">
         <div class="input-group-text bg-info">
@@ -60,7 +60,7 @@
         <div class="text-danger small mt-1"> Contraseña inválida</div>
     }
 
-    <div> <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" type="submit" [disabled]="loading()">@if (loading()){ Cargando ...} @else { Ingresar }</button> </div>
+    <div> <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" type="submit" [disabled]="loginForm.invalid">@if (loading()){ Cargando ...} @else { Ingresar }</button> </div>
     </form>
 
     <div class="d-flex gap-1 justify-content-center mt-1">
@@ -73,7 +73,7 @@
         <p class="alert fs-4 text-center text-danger">{{ errorMensaje() }}</p>
     }
   
-    <button class="btn btn-info text-white w-100  fw-semibold shadow-sm" (click)="acceso1()">Acceso 1</button>
+    <button class="btn btn-info text-white w-100 fw-semibold shadow-sm" (click)="acceso1()">Acceso 1</button>
     <button class="btn btn-info text-white w-100 mt-1 fw-semibold shadow-sm" (click)="acceso2()">Acceso 2</button>
     <button class="btn btn-info text-white w-100 mt-1 fw-semibold shadow-sm" (click)="acceso3()">Acceso 3</button>
     

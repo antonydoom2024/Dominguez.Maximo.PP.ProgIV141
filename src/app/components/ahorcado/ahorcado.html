@@ -1,0 +1,30 @@
+<div class="juego-container text-center">
+  <h2 class="mt-4 fw-bold text-primary-emphasis">Ahorcado</h2>
+
+  <div class="ahorcado-imagen">
+    <img [src]="'images/ahorcado_' + fallos + '.png'" alt="Ahorcado">
+  </div>
+
+  <div class="palabra-secreta fs-1">
+    <span *ngFor="let letra of palabraOculta.split('')">
+      {{ letra }}
+    </span>
+  </div>
+
+  <div class="teclado mt-4">
+    <button *ngFor="let letra of abecedario" 
+            (click)="adivinarLetra(letra)" 
+            [disabled]="letrasUsadas.includes(letra) || juegoTerminado"
+            class="btn btn-primary me-1">
+      {{ letra }}
+    </button>
+  </div>
+
+  <div *ngIf="juegoTerminado" class="mt-4">
+    <p *ngIf="gano" class="fs-2 text-success">¡Ganaste!</p>
+    <p *ngIf="!gano" class="fs-2 text-danger">Perdiste. La palabra era: "{{ palabraSeleccionada }}"</p>
+    <p class="fs-5 text-primary-emphasis">Letras probadas: <strong>{{ letrasSeleccionadasContador }}</strong></p>
+    <p class="fs-5 text-primary-emphasis">Tiempo: <strong>{{ tiempoFormateado }}</strong></p>
+    <button (click)="reiniciarJuego()" class="btn btn-primary fs-4">Reiniciar</button>
+  </div>
+</div>

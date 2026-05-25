@@ -38,7 +38,7 @@
 
     <div class="text-center fs-1 fw-bold mt-2">Registrarse</div>
 
-    <form (ngSubmit)="onSubmit()">
+    <form (ngSubmit)="onSubmit()" #registroForm="ngForm">
 
         <div class="input-group mt-4">
             <div class="input-group-text bg-info">
@@ -90,7 +90,7 @@
             <div class="text-danger small mt-1"> Contraseña inválida</div>
         }
 
-        <div> <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" type="submit" [disabled]="loading()">@if (loading()){ Cargando ...} @else { Registrarse }</button> </div>
+        <div> <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" type="submit" [disabled]="registroForm.invalid">@if (loading()){ Cargando ...} @else { Registrarse }</button> </div>
     </form>
 
     <div class="d-flex gap-1 justify-content-center mt-1">
