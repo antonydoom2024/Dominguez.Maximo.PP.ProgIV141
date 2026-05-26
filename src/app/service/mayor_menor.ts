@@ -14,7 +14,7 @@ export class MayorMenorService {
     async cargarPartida(){
         this.loading.set(true);
         this.error.set(null);
-        const {data, error} = await this.supabase.getClient().from('mayor_menor').select('*').order('created_at', {ascending: false});
+        const {data, error} = await this.supabase.getClient().from('mayor_menor').select('*').order('aciertos', {ascending: false});
         //console.log(data);
         if (error){
             this.error.set(error.message);

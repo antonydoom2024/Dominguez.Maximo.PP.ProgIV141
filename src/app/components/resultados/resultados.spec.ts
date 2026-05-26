@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DadoMayor } from './dado-mayor';
+import { Resultados } from './resultados';
 
-describe('DadoMayor', () => {
-  let component: DadoMayor;
-  let fixture: ComponentFixture<DadoMayor>;
+describe('Resultados', () => {
+  let component: Resultados;
+  let fixture: ComponentFixture<Resultados>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DadoMayor],
+      imports: [Resultados],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(DadoMayor);
+    fixture = TestBed.createComponent(Resultados);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

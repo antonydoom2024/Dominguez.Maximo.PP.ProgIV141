@@ -31,3 +31,18 @@ export interface PartidaMayorMenor {
   aciertos: number;
   created_at: string;
 }
+
+export interface PartidaPreguntados {
+  id: number;
+  username: string;
+  aciertos: number;
+  puntaje: number;
+  created_at: string;
+}
+
+export interface PartidaDobles {
+  id: number;
+  username: string;
+  tiradas: number;
+  created_at: string;
+}
