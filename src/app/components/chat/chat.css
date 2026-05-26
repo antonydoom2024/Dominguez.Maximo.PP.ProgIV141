@@ -1,0 +1,8 @@
+.punta-globo {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #ffffff; /* Debe coincidir con el color de fondo (bg-primary) */
+  margin-left: 20px;
+}

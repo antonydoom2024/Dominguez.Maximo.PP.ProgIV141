@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container-fluid">
+    <img src="favicon.png" alt="favicon" style="width: 40px; height: 40px;" class="me-1">
+    <a routerLink="/login" class="navbar-brand fw-bold">
+        <span class="text-light fs-1">Sala </span> 
+        <span class="text-warning fs-1">de Juegos </span> 
+    </a>
+
+    <button class="navbar-toggler" type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarS" 
+        aria-controls="navbarS" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation"
+    > 
+        <span class="navbar-toggler-icon"></span> 
+    </button>
+    <div class="collapse navbar-collapse" id="navbarS">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a routerLink="/home" class="nav-link"><span class="text-white">Home</span></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/quien_soy" class="nav-link"><span class="text-white">Quien Soy</span></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/chat" class="nav-link"><span class="text-white">Chat</span></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/resultados" class="nav-link"><span class="text-white">Resultados</span></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/login" class="nav-link"><span class="text-white">Cerrar sesion</span></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="main-content">
+    <router-outlet></router-outlet>
+</main>

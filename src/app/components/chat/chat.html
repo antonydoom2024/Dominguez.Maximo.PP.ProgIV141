@@ -1,0 +1,21 @@
+<div class="chat-container">
+
+    <div class="input-area mt-4 input-group">
+        <input [(ngModel)]="nuevoMensaje" (keyup.enter)="enviar()" placeholder="Escribe un mensaje..." class="form-control"/>
+        <button (click)="enviar()" [disabled]="!nuevoMensaje.trim()" class="btn btn-outline-primary bg-info-subtle">Enviar</button>
+    </div>
+
+    <div class="messages-list mt-3 d-flex flex-column align-items-start position-relative m-2">
+        @for (msg of chatService.mensajes(); track msg.id) {
+            <div class="message-item bg-light rounded p-3 shadow-sm globo-chat mt-2">
+                <span class="user-tag text-danger fw-bold fs-5">{{ msg.usuarios?.username }}: </span>
+                <span class="content fs-5">{{ msg.contenido }}</span>
+                
+            </div>
+            
+            <div class="punta-globo"></div>
+            <span class="mt-1 text-primary-emphasis">{{ msg.created_at | date: 'shortTime' }}</span>
+        }
+    </div>
+
+</div>

@@ -1,0 +1,53 @@
+<p class="text-primary fs-4 mt-4">Bienvenido "{{usuario}}"</p>
+<p class="text-primary-emphasis fw-bold fs-2 mt-4">Juegos disponibles</p>
+
+<div class="row row-cols-1 row-cols-md-4 g-1 align-items-center ">
+    <div class="col">
+        <div class="card bg-info rounded-4 bg-gradient mb-3 border-primary h-100" style="width: 15rem">
+            <div class="card-body text-center">
+                <img src="images/ahorcado.png" class="card-img-top border border-primary rounded-4 bg-white" style="height: 12rem; width: 12rem;">
+                <h3 class="card-title mt-2 fw-bold"> Ahorcado </h3>
+            </div>
+            <div class="card-footer">
+                <button routerLink="/ahorcado" class="btn btn-primary text-white w-100 fw-semibold shadow-sm"> <i class="bi bi-play-fill fs-3"></i> </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card bg-info rounded-4 bg-gradient mb-3 border-primary h-100" style="width: 15rem">
+            <div class="card-body text-center">
+                <img src="images/mayorMenor.webp" class="card-img-top border border-primary rounded-4 bg-dark" style="height: 12rem; width: 12rem;">
+                <h3 class="card-title mt-2 fw-bold"> Mayor o Menor </h3>
+            </div>
+            <div class="card-footer">
+                <button routerLink="/mayor_menor" class="btn btn-primary text-white w-100 fw-semibold shadow-sm"> <i class="bi bi-play-fill fs-3"></i> </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card bg-info rounded-4 bg-gradient mb-3 border-primary h-100" style="width: 15rem">
+            <div class="card-body text-center">
+                <img src="images/preguntados.webp" class="card-img-top border border-primary rounded-4 bg-white" style="height: 12rem; width: 12rem;">
+                <h3 class="card-title mt-2 fw-bold"> Preguntados </h3>
+            </div>
+            <div class="card-footer">
+                <button routerLink="/preguntados" class="btn btn-primary text-white w-100 fw-semibold shadow-sm"> <i class="bi bi-play-fill fs-3"></i> </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card bg-info rounded-4 bg-gradient mb-3 border-primary h-100" style="width: 15rem">
+            <div class="card-body text-center">
+                <img src="images/dados.png" class="card-img-top border border-primary rounded-4 bg-success" style="height: 12rem; width: 12rem;">
+                <h3 class="card-title mt-2 fw-bold"> Dobles </h3>
+            </div>
+            <div class="card-footer">
+                <button routerLink="/dobles" class="btn btn-primary text-white w-100 fw-semibold shadow-sm"> <i class="bi bi-play-fill fs-3"></i> </button>
+            </div>
+        </div>
+    </div>
+
+</div>

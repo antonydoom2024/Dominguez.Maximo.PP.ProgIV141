@@ -1,0 +1,102 @@
+<div class="mt-4">
+    
+    <h2 class="fw-bold text-success-emphasis">Ahorcado</h2>
+    @if (ahorcado.partidas().length == 0){
+        <p class="fs-5 text-danger-emphasis">No hay partidas registradas del ahorcado</p>
+    }@else{
+        <table class="table table-bordered table-striped text-center fs-5">
+            <thead class="table-primary">
+                <tr>
+                <th scope="col">Registro</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Letras seleccionadas</th>
+                <th scope="col">Tiempo</th>
+                </tr>
+            </thead>
+            <tbody class="table-info">
+            @for(partida of ahorcado.partidas(); track partida.id){
+                <tr>
+                    <td>{{partida.id}}</td>
+                    <td>{{partida.username}}</td>
+                    <td>{{partida.cant_letras}}</td>
+                    <td>{{partida.tiempo}}</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+
+    <h2 class="mt-4 fw-bold text-success-emphasis">Mayor o Menor</h2>
+    @if (mayor_menor.partidas().length == 0){
+        <p class="fs-5 text-danger-emphasis">No hay partidas registradas de mayor o menor</p>
+    }@else{
+        <table class="table table-bordered table-striped text-center fs-5">
+            <thead class="table-primary">
+                <tr>
+                <th scope="col">Registro</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Aciertos</th>
+                </tr>
+            </thead>
+            <tbody class="table-info">
+            @for(partida of mayor_menor.partidas(); track partida.id){
+                <tr>
+                    <td>{{partida.id}}</td>
+                    <td>{{partida.username}}</td>
+                    <td>{{partida.aciertos}}</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+
+    <h2 class="mt-4 fw-bold text-success-emphasis">Preguntados</h2>
+    @if (preguntados.partidas().length == 0){
+        <p class="fs-5 text-danger-emphasis">No hay partidas registradas del preguntados</p>
+    }@else{
+        <table class="table table-bordered table-striped text-center fs-5 text-primary-emphasis">
+            <thead class="table-primary">
+                <tr>
+                <th scope="col">Registro</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Aciertos</th>
+                <th scope="col">Puntuacion</th>
+                </tr>
+            </thead>
+            <tbody class="table-info">
+            @for(partida of preguntados.partidas(); track partida.id){
+                <tr>
+                    <td>{{partida.id}}</td>
+                    <td>{{partida.username}}</td>
+                    <td>{{partida.aciertos}}</td>
+                    <td>{{partida.puntaje}}</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+
+    <h2 class="mt-4 fw-bold text-success-emphasis">Dobles</h2>
+    @if (dobles.partidas().length == 0){
+        <p class="fs-5 text-danger-emphasis">No hay partidas registradas de dobles</p>
+    }@else{
+        <table class="table table-bordered table-striped text-center fs-5">
+            <thead class="table-primary">
+                <tr>
+                <th scope="col">Registro</th>
+                <th scope="col">Usuario</th>
+                <th scope="col">Tiradas</th>
+                </tr>
+            </thead>
+            <tbody class="table-info">
+            @for(partida of dobles.partidas(); track partida.id){
+                <tr>
+                    <td>{{partida.id}}</td>
+                    <td>{{partida.username}}</td>
+                    <td>{{partida.tiradas}}</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    }
+</div>

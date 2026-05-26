@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-center align-items-center mt-4 mb-5">
+<div class="bg-info p-4 rounded-5 text-secondary shadow" style="width: 30rem;">
+
+    <div class="justify-content-center mt-3 mb-2 text-center">
+        <img src={{alumno().avatar_url}} alt="img-user" class="border border-2 border-danger rounded-circle bg-white" style="height: 8rem; width: 8rem;">
+    </div>
+
+    <div class="text-danger text-center fs-1 fw-bold mb-4">{{ alumno().name }}</div>
+
+    <p class="text-danger fs-4 mt-2"> <span class="fw-bold">ID:</span> {{ alumno().id }}</p>
+    <p class="text-danger fs-4 mt-2"> <span class="fw-bold">Usuario:</span> {{ alumno().login }}</p>
+    <p class="text-danger fs-4 mt-2"> <span class="fw-bold">Creado:</span> {{ alumno().created_at.toLocaleDateString() }}</p>
+
+</div>
+</div>
+
+<hr>
+
+<div class="d-flex justify-content-center align-items-center mt-5">
+  <div class="bg-info p-4 rounded-5 shadow" style="width: 41rem;">
+    <h1 class="text-center text-success-emphasis fw-bold">Dobles</h1>
+
+    <div class="justify-content-center mt-3 mb-2 text-center">
+        <img src="images/dados.avif" alt="img-dados" class="border border-2 border-success bg-white" style="height: 20rem; width: 28rem;">
+    </div>
+    <h3>Objetivo</h3>
+    <p class="juego_texto">Lanzar los dos dados y conseguir un doble (dos números iguales, ej: 1-1, 5-5). El ganador es el jugador que lo logre utilizando la menor cantidad de tiros</p>
+
+    <h3>Dinámica</h3>
+    <ul class="juego_texto" style="list-style-type: circle;">
+      <li>El jugador tirara los dados de forma consecutiva hasta sacar un doble</li>
+      <li>Cuando el jugador saque un doble, se anotara el total de tiradas que realizo</li>
+    </ul>
+
+    <h3>Ganador</h3>
+    <ul class="juego_texto" style="list-style-type: circle;">
+      <li>Gana el jugador que haya conseguido el doble con menos cantidad de intentos acumulados</li>
+    </ul>
+  </div>
+  
+</div>

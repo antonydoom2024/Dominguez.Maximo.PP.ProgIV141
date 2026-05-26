@@ -1,0 +1,17 @@
+<div class="container text-center">
+    
+    <h2 class="mt-4 fw-bold text-primary-emphasis">Dobles</h2>
+
+    <div class="mt-4">
+        <img [src]="dadoIzquierdo" alt="" class="me-3 bg-danger rounded rounded-4 border border-secondary" style="width: 200px; height: 200px;">
+        <img [src]="dadoDerecho" alt="" class="bg-danger rounded rounded-4 border border-secondary" style="width: 200px; height: 200px;">
+    </div>
+  
+    <button *ngIf="!juegoTerminado" type="button" class="btn btn-primary fs-3 mt-5" (click)="tirarDados()">Tirar Dados</button>
+
+    <div *ngIf="juegoTerminado">
+        <h1><span class="badge bg-success fs-1 mt-5">GANASTE</span></h1>
+        <p class="text-danger-emphasis fs-3 mt-3">Tiradas: <strong> {{ tiradas }} </strong></p>
+        <button (click)="reiniciarJuego()" class="btn btn-primary fs-4 mt-2">Reiniciar</button>
+    </div>
+</div>
